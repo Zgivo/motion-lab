@@ -17,6 +17,7 @@ jobs:
         run: |
           tar -xf motion-lab-source.tar
           rm motion-lab-source.tar
+          rm motion-lab-public.tar
           rm .github/workflows/bootstrap.yml
       - uses: pnpm/action-setup@v4
         with:
