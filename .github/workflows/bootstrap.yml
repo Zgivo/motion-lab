@@ -1,6 +1,7 @@
 name: Bootstrap repository
 
 on:
+  workflow_dispatch:
   push:
     paths:
       - motion-lab-public.tar
@@ -17,7 +18,7 @@ jobs:
         run: |
           tar -xf motion-lab-public.tar
           rm motion-lab-public.tar
-          rm .bootstrap-trigger
+          rm -f .bootstrap-trigger
           rm .github/workflows/bootstrap.yml
       - uses: pnpm/action-setup@v4
         with:
