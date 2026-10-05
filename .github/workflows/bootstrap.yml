@@ -3,7 +3,7 @@ name: Bootstrap repository
 on:
   push:
     paths:
-      - motion-lab-source.tar
+      - motion-lab-public.tar
 
 permissions:
   contents: write
@@ -15,9 +15,9 @@ jobs:
       - uses: actions/checkout@v4
       - name: Expand source tree
         run: |
-          tar -xf motion-lab-source.tar
-          rm motion-lab-source.tar
+          tar -xf motion-lab-public.tar
           rm motion-lab-public.tar
+          rm .bootstrap-trigger
           rm .github/workflows/bootstrap.yml
       - uses: pnpm/action-setup@v4
         with:
